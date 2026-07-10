@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { SITE } from "@/lib/site";
 import { SIGNATURE_EXPERIENCE_PATH } from "@/data/signature-experience";
+import { DestinationLogo } from "@/components/DestinationLogo";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -9,10 +10,16 @@ export function Footer() {
       <div className="px-4 py-12 sm:px-6 lg:px-8">
         <div className="container-wide grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <div className="font-display text-xl font-semibold">{SITE.name}</div>
-            <p className="mt-3 text-sm text-coastal-100/70 leading-relaxed">
-              The gateway to Andalusia — helping cruise passengers choose between Malaga, Granada,
-              Ronda, Caminito del Rey and the coast with honest independent advice.
+            <Link
+              href="/"
+              className="inline-flex rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-maple-400 focus-visible:ring-offset-2 focus-visible:ring-offset-coastal-900"
+              aria-label={`${SITE.name} — home`}
+            >
+              <DestinationLogo variant="compact" tone="on-dark" decorative />
+            </Link>
+            <p className="mt-4 text-sm text-coastal-100/70 leading-relaxed">
+              Helping cruise passengers choose between Malaga, Granada, Ronda, Caminito del Rey and
+              the coast with honest independent advice for every day ashore.
             </p>
           </div>
           <div>
@@ -45,7 +52,8 @@ export function Footer() {
             </ul>
           </div>
         </div>
-        <div className="container-wide mt-10 flex flex-wrap gap-x-6 gap-y-2 border-t border-white/10 pt-6 text-xs text-coastal-100/60">
+        <div className="container-wide mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-white/10 pt-6 text-xs text-coastal-100/60">
+          <DestinationLogo variant="mark" tone="on-dark" className="opacity-90" decorative />
           <Link href="/about" className="hover:text-white">About</Link>
           <Link href="/faq" className="hover:text-white">FAQ</Link>
           <Link href="/privacy" className="hover:text-white">Privacy Policy</Link>

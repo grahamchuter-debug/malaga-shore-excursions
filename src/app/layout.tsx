@@ -24,7 +24,11 @@ export const metadata: Metadata = {
   description: SITE.description,
   metadataBase: new URL(SITE.url),
   icons: {
-    icon: [{ url: "/images/logo-mark.svg", type: "image/svg+xml" }],
+    icon: [
+      { url: "/favicon-16.svg", type: "image/svg+xml", sizes: "16x16" },
+      { url: "/favicon-32.svg", type: "image/svg+xml", sizes: "32x32" },
+      { url: "/images/logo-mark.svg", type: "image/svg+xml" },
+    ],
     apple: [{ url: "/images/logo-mark.svg" }],
   },
   openGraph: {

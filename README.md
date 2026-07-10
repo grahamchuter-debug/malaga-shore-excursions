@@ -4,6 +4,10 @@ World 2.0 flagship destination site for [malagashoreexcursions.com](https://mala
 
 **Positioning:** Gateway to Andalusia / Where Southern Spain Begins
 
+## Destination identity prototype
+
+Málaga is the reference prototype for the future World 2.0 network identity system (`DestinationLogo` + `destinationIdentity` config). Other destinations are not implemented yet — change `logoConcept` between `"anchor-arch"` and `"harbour-m"` to compare marks.
+
 ## Stack
 
 - Next.js 16 (static export)

@@ -17,6 +17,8 @@ import { siteImages, getExcursionImage } from "@/lib/images";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { PreloadImage } from "@/components/PreloadImage";
 import { AndalusiaLinks } from "@/components/AndalusiaLinks";
+import { CruiseHeroTrust } from "@/components/CruiseHeroTrust";
+import { YourDayAshore } from "@/components/YourDayAshore";
 import { SITE } from "@/lib/site";
 
 export const metadata = buildMetadata({
@@ -35,7 +37,7 @@ export const metadata = buildMetadata({
 });
 
 const SITE_DESCRIPTION =
-  "The gateway to Andalusia — carefully selected Malaga shore excursions, independent cruise advice and unforgettable experiences across Granada, Ronda, Caminito del Rey and the Costa del Sol.";
+  "The gateway to Andalusia — carefully selected Malaga shore excursions, independent cruise advice and unforgettable experiences across Granada, Ronda, Caminito del Rey and the Costa del Sol for your day ashore.";
 
 export default function HomePage() {
   const faqs = getHomepageFaqs();
@@ -70,9 +72,10 @@ export default function HomePage() {
         <div className="container-wide relative z-10 px-4 sm:px-6 lg:px-8">
           <p className="section-eyebrow mb-2 text-coastal-100 animate-fade-up">Gateway to Andalusia</p>
           <h1 className="home-hero-heading animate-fade-up-delay">{homepageTagline}</h1>
+          <CruiseHeroTrust />
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/90 sm:text-lg animate-fade-up-delay">
             Explore carefully selected Malaga shore excursions, independent cruise advice and
-            unforgettable Andalusian experiences.
+            unforgettable Andalusian experiences — planned around your time in port.
           </p>
           <div className="mt-8 flex flex-wrap gap-3 animate-fade-up-delay-2">
             <Link href="/shore-excursions" className="btn-accent">
@@ -102,6 +105,7 @@ export default function HomePage() {
         </div>
       </section>
 
+      <YourDayAshore />
       <ChooseYourAndalusia />
       <SpiritOfAndalusia />
       <WowCollectionFeature />
@@ -118,8 +122,9 @@ export default function HomePage() {
               Featured shore excursions
             </h2>
             <p className="mt-4 text-base leading-relaxed text-white/80 sm:text-lg">
-              Once you know which experience suits your day, these cruise-timed tours are designed for
-              passengers who already understand which Andalusian experience fits their port day.
+              Once you know which experience suits your day ashore, these cruise-timed tours are
+              designed for passengers who already understand which Andalusian experience fits their
+              port call.
             </p>
           </div>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -179,8 +184,9 @@ export default function HomePage() {
             <h2 className="section-title mt-2">Can you explore Malaga without a tour?</h2>
             <p className="mt-4 text-gray-700 leading-relaxed">
               Yes. Malaga&apos;s Old Town, cathedral, Alcazaba, Picasso Museum, Atarazanas Market,
-              Muelle Uno and Malagueta Beach can all fit a sensible independent port day. Our guide
-              explains the walk from the terminal, practical sequencing and return buffers.
+              Muelle Uno and Malagueta Beach can all fit a sensible independent day ashore. Our guide
+              explains the walk from the terminal, practical sequencing and how to get back on board
+              with a sensible return buffer.
             </p>
             <Link href="/guides/independent-malaga-guide" className="btn-secondary mt-6 inline-flex text-sm">
               Read the independent Malaga guide →
@@ -229,11 +235,11 @@ export default function HomePage() {
       {/* Planning hub */}
       <section className="section-padding bg-white">
         <div className="container-wide">
-          <p className="section-eyebrow">Plan your port day</p>
+          <p className="section-eyebrow">Plan your day ashore</p>
           <h2 className="section-title mt-2">Everything you need to choose the right Andalusia experience</h2>
           <p className="section-subtitle">
-            Not just an excursion catalogue — comparisons, guides, schedules and honest advice because
-            the best bookings start with genuine understanding.
+            Not just an excursion catalogue — comparisons, guides, schedules and honest cruise-day
+            planning advice, because the best bookings start with genuine understanding.
           </p>
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {coreSections.map((s) => (
@@ -257,8 +263,9 @@ export default function HomePage() {
             See which ships call at Malaga
           </h2>
           <p className="mt-4 text-white/85">
-            Check cruise ship schedules before you book Granada, Ronda or Caminito del Rey. Times are
-            indicative — always confirm with your cruise line.
+            Check published ship schedules before you book Granada, Ronda or Caminito del Rey. Times
+            are indicative — always confirm your own port call with your cruise line before you go
+            ashore.
           </p>
           <Link href="/ship-schedules/malaga" className="btn-accent mt-8 inline-flex">
             View Malaga ship schedules

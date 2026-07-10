@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { siteImages } from "@/lib/images";
+import { DestinationLogo } from "@/components/DestinationLogo";
+import { destinationIdentity } from "@/data/destination-identity";
 
 const navItems = [
   { href: "/compare", label: "Compare" },
@@ -17,21 +18,22 @@ export function Header() {
   const [open, setOpen] = useState(false);
   return (
     <header className="sticky top-0 z-50 border-b border-coastal-100 bg-white/95 backdrop-blur-sm">
-      <div className="container-wide flex items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        <Link href="/" className="flex items-center gap-2 group">
-          <img
-            src={siteImages.logo.src}
-            alt={siteImages.logo.alt}
-            className="h-10 w-10 rounded-full object-cover ring-2 ring-coastal-200"
-            width={40}
-            height={40}
-          />
-          <div className="hidden sm:block">
-            <div className="font-display text-lg font-bold text-coastal-800 leading-tight">Malaga Shore</div>
-            <div className="text-xs text-gray-500 -mt-0.5">Gateway to Andalusia</div>
-          </div>
+      <div className="container-wide flex items-center justify-between gap-3 px-4 py-3 sm:px-6 sm:py-3.5 lg:px-8">
+        <Link
+          href="/"
+          className="group min-w-0 shrink rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-coastal-500 focus-visible:ring-offset-2"
+          aria-label={`${destinationIdentity.accessibleName} — home`}
+        >
+          {/* Desktop / large tablet: full wordmark with strapline */}
+          <span className="hidden lg:inline-flex">
+            <DestinationLogo variant="full" decorative />
+          </span>
+          {/* Compact tablet / mobile: destination + descriptor only */}
+          <span className="inline-flex lg:hidden">
+            <DestinationLogo variant="compact" decorative />
+          </span>
         </Link>
-        <nav className="hidden xl:flex items-center gap-1" aria-label="Main navigation">
+        <nav className="hidden xl:flex items-center gap-0.5" aria-label="Main navigation">
           {navItems.map((item) => (
             <Link
               key={item.href}
@@ -42,12 +44,14 @@ export function Header() {
             </Link>
           ))}
         </nav>
-        <div className="hidden xl:block">
-          <Link href="/enquire" className="btn-accent text-sm">Enquire</Link>
+        <div className="hidden xl:block shrink-0">
+          <Link href="/enquire" className="btn-accent text-sm">
+            Enquire
+          </Link>
         </div>
         <button
           type="button"
-          className="xl:hidden rounded-lg p-2 text-gray-700 hover:bg-coastal-50"
+          className="xl:hidden shrink-0 rounded-lg p-2 text-gray-700 hover:bg-coastal-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-coastal-500"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
           aria-expanded={open}
