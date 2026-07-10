@@ -40,10 +40,10 @@ export const imageManifest = {
   },
   "caminito": {
     "base": "caminito",
-    "width": 1400,
-    "height": 2100,
-    "fallbackWidth": 1400,
-    "fallbackHeight": 2100,
+    "width": 1280,
+    "height": 1920,
+    "fallbackWidth": 1280,
+    "fallbackHeight": 1920,
     "widths": [
       320,
       480,
@@ -176,10 +176,10 @@ export const imageManifest = {
   },
   "hero-home": {
     "base": "hero-home",
-    "width": 1400,
-    "height": 2100,
-    "fallbackWidth": 1400,
-    "fallbackHeight": 2100,
+    "width": 1280,
+    "height": 1920,
+    "fallbackWidth": 1280,
+    "fallbackHeight": 1920,
     "widths": [
       320,
       480,
@@ -256,10 +256,10 @@ export const imageManifest = {
   },
   "photography": {
     "base": "photography",
-    "width": 1400,
-    "height": 2100,
-    "fallbackWidth": 1400,
-    "fallbackHeight": 2100,
+    "width": 1280,
+    "height": 1920,
+    "fallbackWidth": 1280,
+    "fallbackHeight": 1920,
     "widths": [
       320,
       480,
