@@ -3,9 +3,12 @@
  * network-wide logo system.
  *
  * Intended future pattern (do not implement other destinations here):
- *   MÁLAGA  / SHORE EXCURSIONS / Gateway to Andalusia
+ *   MÁLAGA  / SHORE EXCURSIONS / GATEWAY TO ANDALUSIA
  *   LIVORNO / SHORE EXCURSIONS / Gateway to Tuscany
  *   CORFU   / SHORE EXCURSIONS / The Emerald Island
+ *
+ * Strapline is stored in title case for accessibility; the logo component
+ * renders it as light tracked uppercase for the wordmark.
  *
  * Swap `logoConcept` to compare prototype marks without a public selector.
  */
@@ -16,6 +19,7 @@ export type LogoTone = "default" | "on-dark";
 export const destinationIdentity = {
   destination: "Málaga",
   descriptor: "Shore Excursions",
+  /** Displayed as tracked uppercase in the wordmark (e.g. GATEWAY TO ANDALUSIA). */
   strapline: "Gateway to Andalusia",
   /** Accessible full brand name for screen readers / link labels */
   accessibleName: "Málaga Shore Excursions",

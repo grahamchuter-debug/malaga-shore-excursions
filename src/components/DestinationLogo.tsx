@@ -104,6 +104,9 @@ function MarkSvg({
 /**
  * Reusable World 2.0 destination wordmark.
  * HTML text for accessibility + inline SVG mark (no raster assets).
+ *
+ * Logo refinement (Málaga prototype): icon slightly subordinate to MÁLAGA,
+ * tighter icon–text gap, strapline as light tracked caps in terracotta.
  */
 export function DestinationLogo({
   variant = "full",
@@ -114,7 +117,8 @@ export function DestinationLogo({
 }: DestinationLogoProps) {
   const { destination, descriptor, strapline, accessibleName } = destinationIdentity;
   const onDark = tone === "on-dark";
-  const markSize = variant === "mark" ? 36 : variant === "compact" ? 36 : 40;
+  // ~12% smaller than the first prototype so MÁLAGA stays dominant
+  const markSize = variant === "mark" ? 32 : variant === "compact" ? 32 : 34;
 
   if (variant === "mark") {
     return (
@@ -135,7 +139,7 @@ export function DestinationLogo({
 
   return (
     <span
-      className={`inline-flex items-center gap-2.5 min-w-0 ${className}`}
+      className={`inline-flex items-center gap-1.5 min-w-0 sm:gap-2 ${className}`}
       {...(decorative ? { "aria-hidden": true } : {})}
     >
       <MarkSvg concept={concept} tone={tone} size={markSize} />
@@ -151,7 +155,10 @@ export function DestinationLogo({
           {descriptor}
         </span>
         {variant === "full" && strapline ? (
-          <span className={`mt-1 block text-[0.7rem] italic tracking-wide ${straplineClass}`}>
+          <span
+            className={`mt-1 block text-[0.625rem] font-medium uppercase tracking-[0.12em] sm:text-[0.65rem] ${straplineClass}`}
+            style={{ letterSpacing: "0.12em" }}
+          >
             {strapline}
           </span>
         ) : null}
